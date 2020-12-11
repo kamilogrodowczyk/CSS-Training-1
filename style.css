@@ -161,6 +161,7 @@ p {
     width: 100%;
     position: relative;
     z-index: -1;
+    display: block;
 } 
 
 .gallery-image:hover {
