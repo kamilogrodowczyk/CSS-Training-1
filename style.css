@@ -16,6 +16,10 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    width: 100%;
+}
+
 button {
     font-family: 'Open Sans', sans-serif;
     padding: 1rem 3.5rem;
@@ -148,8 +152,9 @@ p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 0.5rem;
+    width: 100%;
 }
 
 .gallery-image {
@@ -192,39 +197,46 @@ p {
 .about {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    height: 80%;
-    margin: 15rem;
-    justify-content: space-between;
-    gap: 0 3rem;
+    width: 90%;
+    margin: 12rem auto;
+    gap: 2rem;
 }
 
-.about-elements > img {
-    width: 100%;
-    text-align: center;
+.about-elements {
+    display: grid;
+    align-content: space-between;
 }
 
-.about-element > p {
+.about-element > * {
+    padding: .5rem 0;
+}
+
+.about-element > h2 {
+    padding: 0;
+}
+
+.about-element > img {
     width: 100%;
-    line-height: 1.5;
-    padding: 2rem 0;
 }
 
 .about-element > h4 {
     color: var(--color-red);
 }
 
+.icons {
+    margin-top: 1rem;
+}
+
 .icons > * {
     border: 0.1rem solid var(--color-grey);
     padding: 1rem;
-    margin: 0.5rem;
     transition: all 0.5s;
 }
 
-.about-element > .icons *:hover {
+.icons *:hover {
     background-color: black;
     color: white;
 }
-
 
 .last-one {
     display: flex;
@@ -237,13 +249,16 @@ p {
 }
 
 .quote {
-    flex:1;
-    flex-basis: 50%;
     background-color: burlywood;
     display: grid;
     align-content: center;
-    padding: 0 6rem;
+    flex-basis: 50%;
     justify-content: center;
+    text-align: center;
+}
+
+.quote > * {
+    margin: 1rem;
 }
 
 .quote > blockquote > p {
@@ -252,7 +267,6 @@ p {
 }
 
 .quote > figcaption {
-    display: flex;
     margin-top: 1.5rem;
 }
 
@@ -281,13 +295,14 @@ p {
     align-content: center;
     color: white;
     background-color: var(--light-background);
+    gap: 4rem;
+    padding: 4rem 0;
 }
 
 
 .footer > * {
     text-align: center;
     display: grid;
-    padding: 6rem 0;
 }
 
 .footer-header {
@@ -316,12 +331,12 @@ p {
 
 @media screen and (max-width: 1400px) {
 
-    .hero-elements > h1 {
+    h1 {
         font-size: 4rem;
         line-height: 1;
     }
 
-    .hero-elements > h2 {
+    h2 {
         font-size: 2.5rem;
     }
 
@@ -333,13 +348,15 @@ p {
         height: 60vh;
     }
 
+    .quote > blockquote > p {
+        font-size: 10rem;
+    }
+
     .about {
         grid-template-columns: repeat(2, minmax(25rem, 1fr));
     }
 
 }
-
-/* @media screen and (max-width: 1100px)  */
 
 @media screen and (max-width: 1000px) {
 
@@ -385,7 +402,36 @@ p {
         display: none;
     }
 
+    .quote > blockquote > p {
+        font-size: 7rem;
+    }
+
+
     .footer {
         grid-template-columns: repeat(1, minmax(30rem, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+        line-height: 1.5;
+    }  
+
+    h2 {
+        font-size: var(--font);
+    }
+
+    h4, p, button {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: .5rem 1.5rem;
+        margin-top: .5rem;
+    }
+
+    .quote > blockquote > p {
+        font-size: 3rem;
     }
 }
