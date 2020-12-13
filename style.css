@@ -97,7 +97,8 @@ p {
 
 .nav-links {
     list-style: none;
-    justify-content: space-between;
+    justify-content: space-around;
+    overflow: hidden;
 }
 
 .nav-link {
@@ -108,25 +109,21 @@ p {
     transition: transform 0.5s;
     position: relative;
     display: inline-block;
+    white-space: nowrap;
+    /* overflow: hidden; */
 }
 
 .nav-link::after {
     content: attr(data-attr);
     position: absolute;
     top: 100%;
-    left: 0; 
+    left: 0;
     font-weight: 600; 
-    visibility: hidden; 
 }
 
 .nav-link:hover {
     transform: translateY(-100%);
-    visibility: hidden;
 }  
-
-.nav-link:hover::after {
-    visibility: visible; 
-}
 
 .hero {
     height: 85vh;
