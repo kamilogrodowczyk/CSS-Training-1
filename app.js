@@ -47,11 +47,3 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk
   }
 });
-
-// slider.addEventListener('touchmove', (e) => {
-//   if(!isDown) return; {
-//     const x = e.pageX - slider.offsetLeft;
-//     const walk = (x - startX) * 2;
-//     slider.scrollLeft = scrollLeft - walk
-//   }
-// });
